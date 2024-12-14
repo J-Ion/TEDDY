@@ -1,0 +1,257 @@
+@import url('https://webfontworld.github.io/pretendard/Pretendard.css');
+
+body{
+    font-family: 'Pretendard';
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+
+@media (min-width: 1024px) {
+
+
+.Welcome{
+    font-size: 250px;
+    font-weight: 600;
+}
+
+.WelcomeContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.IntroduceContainerUp{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 300px;
+}
+
+.IntroduceContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.IntroducePicUp{
+    margin-top: 4%;
+}
+
+.IntroducePic{
+    width: 720px;
+    height: 300px;
+}
+
+.Invite{
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.Ready{
+    font-size: 150px;
+    font-weight: 600;
+    margin: 0%;
+}
+
+.ReadyPic{
+    width: 500px;
+    height: 800px;
+    border-radius: 40px;
+}
+
+.ReadyContainer{
+    margin: 0%;
+}
+
+.ReadyContainerUp{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.Ultimate{
+    display: flex;
+    justify-content: center;
+}
+
+.buttons {
+    margin: 10%;
+    text-align: center;
+}
+
+.btn-hover {
+    width: 300px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 82.5px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-9 {
+    background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+    margin-top: 50px;
+    margin-left: 0;
+    font-size: 20px;
+}
+}
+
+@media (min-width: 770px) and (max-width: 1024px) {
+    
+    .Welcome {
+    font-size: 120px;
+    font-weight: 600;
+    }
+
+    .WelcomeContainer{
+        display: flex;
+        justify-content: center;
+        margin-top: 300px;
+        margin-bottom: 300px;
+    }
+
+    .IntroduceContainerUp {
+        display: flex;
+        justify-content: center; /* 컨테이너를 가로 방향으로 가운데 정렬 */
+        align-items: center; /* 컨테이너를 세로 방향으로 가운데 정렬 */
+        height: 300px;
+        margin-bottom: 300px; /* 화면 중앙 배치용 */
+    }
+
+    .IntroduceContainer {
+        display: flex; /* Flexbox로 내부 가로 정렬 */
+        justify-content: space-between; /* 이미지와 텍스트를 양 끝으로 배치 */
+        align-items: center; /* 내부 세로 정렬 */
+        flex-wrap: nowrap; /* 줄바꿈 방지 */
+        width: 80%; /* 적절한 컨테이너 크기 */
+        gap: 20px; /* 요소 간 간격 추가 */
+    }
+
+    .IntroducePicUp {
+        flex: 1; /* 이미지 컨테이너 균등 배치 */
+        display: flex;
+        justify-content: center; /* 이미지 가로 정렬 */
+        align-items: center; /* 이미지 세로 정렬 */
+    }
+
+    .InviteContainer {
+        flex: 1; /* 텍스트 컨테이너 균등 배치 */
+        text-align: left; /* 텍스트 정렬 유지 */
+    }
+
+    .IntroducePic {
+        max-width: 100%; /* 이미지 크기를 컨테이너에 맞게 조정 */
+        height: auto; /* 이미지 비율 유지 */
+    }
+
+    .Invite {
+        font-size: 2rem; /* 텍스트 크기 적절히 조정 */
+    }
+
+    .ReadyPic{
+        width: 500px;
+        height: 800px;
+        border-radius: 40px;
+    }
+
+    
+.Ready{
+    font-size: 80px;
+    font-weight: 600;
+    margin: 0%;
+}
+
+.ReadyPic{
+    width: 375px;
+    height: 600px;
+    border-radius: 40px;
+}
+
+.ReadyContainer{
+    margin: 0%;
+}
+
+.ReadyContainerUp{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.Ultimate{
+    display: flex;
+    justify-content: center;
+}
+
+.buttons {
+    margin: 10%;
+    text-align: center;
+}
+
+.btn-hover {
+    width: 300px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 82.5px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-9 {
+    background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+    margin-top: 50px;
+    margin-left: 0;
+    font-size: 20px;
+}
+
+    
+}
