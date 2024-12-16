@@ -12,12 +12,43 @@
         body {
             font-family: 'Pretendard', sans-serif;
         }
+        .back-button-red {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background-color: #ff4757;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            z-index: 1000;
+        }
+
+        .back-button-red:hover {
+            background-color: #ff6b81;
+        }
+
+        @media (max-width: 400px) {
+            .back-button-red {
+                width: 25px;
+                height: 25px;
+                font-size: 16px;
+                top: 5px;
+                right: 5px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- <div class="ticket basic">
-        <p>Admit One</p>
-    </div> -->
+    <button onclick="location.href='ticketing.html'" class="back-button-red">&times;</button>
     
     <div class="ticket airline">
         <div class="destination">
