@@ -1,391 +1,417 @@
 @import url('https://webfontworld.github.io/pretendard/Pretendard.css');
 
-body{
+/* 공통 스타일 */
+body {
     font-family: 'Pretendard';
+    margin: 0;
+    padding: 0;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
 }
 
-
+/* 데스크탑 (1024px 이상) */
 @media (min-width: 1024px) {
-
-
-.Welcome{
-    font-size: 250px;
-    font-weight: 600;
-}
-
-.WelcomeContainer{
-    display: flex;
-    justify-content: center;
-    margin-top: 150px;
-    margin-bottom: 150px;
-}
-
-.IntroduceContainerUp{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 300px;
-}
-
-.IntroduceContainer{
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-}
-
-.IntroducePicUp{
-    margin-top: 4%;
-}
-
-.IntroducePic{
-    width: 720px;
-    height: 300px;
-}
-
-.Invite{
-    font-size: 80px;
-    font-weight: 600;
-}
-
-.Ready{
-    font-size: 150px;
-    font-weight: 600;
-    margin: 0%;
-}
-
-.ReadyPic{
-    width: 500px;
-    height: 800px;
-    border-radius: 40px;
-}
-
-.ReadyContainer{
-    margin: 0%;
-}
-
-.ReadyContainerUp{
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-}
-
-.Ultimate{
-    display: flex;
-    justify-content: center;
-}
-
-.buttons {
-    margin: 10%;
-    text-align: center;
-}
-
-.btn-hover {
-    width: 300px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 20px;
-    height: 82.5px;
-    text-align:center;
-    border: none;
-    background-size: 300% 100%;
-
-    border-radius: 50px;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-}
-
-.btn-hover:hover {
-    background-position: 100% 0;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-}
-
-.btn-hover:focus {
-    outline: none;
-}
-
-.btn-hover.color-9 {
-    background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
-    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
-    margin-top: 50px;
-    margin-left: 0;
-    font-size: 20px;
-}
-}
-
-@media (min-width: 770px) and (max-width: 1024px) {
-    
     .Welcome {
-    font-size: 120px;
-    font-weight: 600;
+        font-size: 250px;
+        font-weight: 600;
+        white-space: nowrap;
     }
 
-    .WelcomeContainer{
+    .WelcomeContainer {
         display: flex;
         justify-content: center;
-        margin-top: 300px;
-        margin-bottom: 300px;
+        margin-top: 150px;
+        margin-bottom: 150px;
+        padding: 0 20px;
     }
 
     .IntroduceContainerUp {
         display: flex;
-        justify-content: center; /* 컨테이너를 가로 방향으로 가운데 정렬 */
-        align-items: center; /* 컨테이너를 세로 방향으로 가운데 정렬 */
-        height: 300px;
-        margin-bottom: 300px; /* 화면 중앙 배치용 */
+        justify-content: center;
+        margin-bottom: 300px;
+        padding: 0 15%;
     }
 
     .IntroduceContainer {
-        display: flex; /* Flexbox로 내부 가로 정렬 */
-        justify-content: space-between; /* 이미지와 텍스트를 양 끝으로 배치 */
-        align-items: center; /* 내부 세로 정렬 */
-        flex-wrap: nowrap; /* 줄바꿈 방지 */
-        width: 80%; /* 적절한 컨테이너 크기 */
-        gap: 20px; /* 요소 간 간격 추가 */
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 50px;
     }
 
     .IntroducePicUp {
-        flex: 1; /* 이미지 컨테이너 균등 배치 */
-        display: flex;
-        justify-content: center; /* 이미지 가로 정렬 */
-        align-items: center; /* 이미지 세로 정렬 */
-    }
-
-    .InviteContainer {
-        flex: 1; /* 텍스트 컨테이너 균등 배치 */
-        text-align: left; /* 텍스트 정렬 유지 */
+        margin-top: 4%;
     }
 
     .IntroducePic {
-        max-width: 100%; /* 이미지 크기를 컨테이너에 맞게 조정 */
-        height: auto; /* 이미지 비율 유지 */
+        width: 720px;
+        height: 300px;
+    }
+
+    .InviteContainer {
+        flex: 1;
     }
 
     .Invite {
-        font-size: 2rem; /* 텍스트 크기 적절히 조정 */
+        font-size: 80px;
+        font-weight: 600;
     }
 
-    .ReadyPic{
+    .Ready {
+        font-size: 150px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .ReadyPic {
         width: 500px;
         height: 800px;
         border-radius: 40px;
     }
 
-    
-.Ready{
-    font-size: 80px;
-    font-weight: 600;
-    margin: 0%;
-}
-
-.ReadyPic{
-    width: 375px;
-    height: 600px;
-    border-radius: 40px;
-}
-
-.ReadyContainer{
-    margin: 0%;
-}
-
-.ReadyContainerUp{
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-}
-
-.Ultimate{
-    display: flex;
-    justify-content: center;
-}
-
-.buttons {
-    margin: 10%;
-    text-align: center;
-}
-
-.btn-hover {
-    width: 300px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 20px;
-    height: 82.5px;
-    text-align:center;
-    border: none;
-    background-size: 300% 100%;
-
-    border-radius: 50px;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-}
-
-.btn-hover:hover {
-    background-position: 100% 0;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-}
-
-.btn-hover:focus {
-    outline: none;
-}
-
-.btn-hover.color-9 {
-    background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
-    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
-    margin-top: 50px;
-    margin-left: 0;
-    font-size: 20px;
-}
-
-    
-}
-
-
-@media (min-width: 10px) and (max-width: 770px) {
-    
-    .Welcome {
-    font-size: 80px;
-    font-weight: 600;
+    .ReadyContainer {
+        margin: 0;
     }
 
-    .WelcomeContainer{
+    .Ultimate {
         display: flex;
         justify-content: center;
-        margin-top: 300px;
-        margin-bottom: 300px;
+        padding: 0 15%;
+    }
+
+    .ReadyContainerUp {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 50px;
+    }
+
+    .buttons {
+        margin: 10%;
+        text-align: center;
+    }
+
+    .btn-hover {
+        width: 300px;
+        height: 82.5px;
+        font-size: 20px;
+        margin: 20px;
+        text-align: center;
+    }
+
+    .btn-hover.color-9 {
+        margin-top: 50px;
+        margin-left: 0;
+    }
+}
+
+/* 태블릿 (770px - 1023px) */
+@media (min-width: 770px) and (max-width: 1023px) {
+    .Welcome {
+        font-size: 150px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .WelcomeContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 200px;
+        margin-bottom: 200px;
+        padding: 0 20px;
     }
 
     .IntroduceContainerUp {
         display: flex;
-        justify-content: center; /* 컨테이너를 가로 방향으로 가운데 정렬 */
-        align-items: center; /* 컨테이너를 세로 방향으로 가운데 정렬 */
+        justify-content: center;
+        margin-bottom: 200px;
+        padding: 0 10%;
         height: 300px;
-        margin-bottom: 300px; /* 화면 중앙 배치용 */
     }
 
     .IntroduceContainer {
-        display: flex; /* Flexbox로 내부 가로 정렬 */
-        justify-content: space-between; /* 이미지와 텍스트를 양 끝으로 배치 */
-        align-items: center; /* 내부 세로 정렬 */
-        flex-wrap: nowrap; /* 줄바꿈 방지 */
-        width: 80%; /* 적절한 컨테이너 크기 */
-        gap: 20px; /* 요소 간 간격 추가 */
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 40px;
+        align-items: center;
     }
 
     .IntroducePicUp {
-        flex: 1; /* 이미지 컨테이너 균등 배치 */
+        flex: 1;
         display: flex;
-        justify-content: center; /* 이미지 가로 정렬 */
-        align-items: center; /* 이미지 세로 정렬 */
-    }
-
-    .InviteContainer {
-        flex: 1; /* 텍스트 컨테이너 균등 배치 */
-        text-align: left; /* 텍스트 정렬 유지 */
+        justify-content: center;
+        align-items: center;
     }
 
     .IntroducePic {
-        max-width: 100%; /* 이미지 크기를 컨테이너에 맞게 조정 */
-        height: auto; /* 이미지 비율 유지 */
+        width: 500px;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .InviteContainer {
+        flex: 1;
     }
 
     .Invite {
-        font-size: 1.5rem; /* 텍스트 크기 적절히 조정 */
+        font-size: 60px;
+        font-weight: 600;
     }
 
-    .ReadyPic{
-        width: 500px;
-        height: 800px;
+    .Ready {
+        font-size: 80px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .ReadyPic {
+        width: 375px;
+        height: 600px;
         border-radius: 40px;
     }
 
-    
-.Ready{
-    font-size: 30px;
-    font-weight: 600;
-    margin: 0%;
+    .ReadyContainer {
+        margin: 0;
+    }
+
+    .Ultimate {
+        display: flex;
+        justify-content: center;
+        padding: 0 10%;
+    }
+
+    .ReadyContainerUp {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 40px;
+    }
+
+    .buttons {
+        margin: 10%;
+        text-align: center;
+    }
+
+    .btn-hover {
+        width: 300px;
+        height: 82.5px;
+        font-size: 16px;
+        margin: 20px;
+        text-align: center;
+    }
+
+    .btn-hover.color-9 {
+        margin-top: 50px;
+        margin-left: 0;
+    }
+}
+/* 작은 모바일 (400px 이하) */
+@media (max-width: 400px) {
+    .Welcome {
+        font-size: 50px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .WelcomeContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 150px;
+        margin-bottom: 150px;
+        padding: 0 10px;
+    }
+
+    .IntroduceContainerUp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        margin-bottom: 150px;
+        padding: 0 5%;
+    }
+
+    .IntroduceContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .IntroducePicUp {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .IntroducePic {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .InviteContainer {
+        width: 100%;
+        text-align: center;
+    }
+
+    .Invite {
+        font-size: 1.2rem;
+        margin: 10px 0;
+    }
+
+    .Ready {
+        font-size: 25px;
+        font-weight: 600;
+        margin: 0;
+        text-align: center;
+    }
+
+    .ReadyPic {
+        width: 150px;
+        height: 240px;
+        border-radius: 20px;
+    }
+
+    .ReadyContainer {
+        margin: 0;
+        text-align: center;
+    }
+
+    .ReadyContainerUp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .Ultimate {
+        display: flex;
+        justify-content: center;
+        padding: 0 5%;
+    }
+
+    .buttons {
+        margin: 5%;
+        text-align: center;
+    }
+
+    .btn-hover {
+        width: 180px;
+        height: 45px;
+        font-size: 14px;
+        margin: 15px;
+    }
+
+    .btn-hover.color-9 {
+        margin-left: 0;
+    }
 }
 
-.ReadyPic{
-    width: 188px;
-    height: 300px;
-    border-radius: 40px;
-}
+/* 중간 모바일 (401px - 769px) */
+@media (min-width: 401px) and (max-width: 769px) {
+    .Welcome {
+        font-size: 80px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
 
-.ReadyContainer{
-    margin: 0%;
-}
+    .WelcomeContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 200px;
+        margin-bottom: 200px;
+        padding: 0 15px;
+    }
 
-.ReadyContainerUp{
-    display: flex;
-    justify-content: center;
-    width: 80%;
-}
+    .IntroduceContainerUp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        margin-bottom: 200px;
+        padding: 0 5%;
+    }
 
-.Ultimate{
-    display: flex;
-    justify-content: center;
-}
+    .IntroduceContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        gap: 30px;
+    }
 
-.buttons {
-    margin: 10%;
-    text-align: center;
-}
+    .IntroducePicUp {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 
-.btn-hover {
-    width: 200px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 20px;
-    height: 55px;
-    text-align:center;
-    border: none;
-    background-size: 300% 100%;
+    .IntroducePic {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
 
-    border-radius: 50px;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-}
+    .InviteContainer {
+        width: 100%;
+        text-align: center;
+    }
 
-.btn-hover:hover {
-    background-position: 100% 0;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-}
+    .Invite {
+        font-size: 1.8rem;
+    }
 
-.btn-hover:focus {
-    outline: none;
-}
+    .Ready {
+        font-size: 40px;
+        font-weight: 600;
+        margin: 0;
+        text-align: center;
+    }
 
-.btn-hover.color-9 {
-    background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
-    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+    .ReadyPic {
+        width: 188px;
+        height: 300px;
+        border-radius: 30px;
+    }
 
-    margin-left: -20px;
+    .ReadyContainer {
+        margin: 0;
+        text-align: center;
+    }
 
-}
+    .ReadyContainerUp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        gap: 30px;
+    }
 
-    
+    .Ultimate {
+        display: flex;
+        justify-content: center;
+        padding: 0 5%;
+    }
+
+    .buttons {
+        margin: 8%;
+        text-align: center;
+    }
+
+    .btn-hover {
+        width: 200px;
+        height: 55px;
+        font-size: 16px;
+        margin: 20px;
+    }
+
+    .btn-hover.color-9 {
+        margin-left: 0;
+    }
 }

@@ -493,3 +493,115 @@ body{
         background-color: #ff6b81;
     }
 }
+
+/* 작은 모바일 (400px 이하) */
+@media (max-width: 400px) {
+    #seat_left, #seat_right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transform: scale(0.6); /* 더 작은 화면에 맞게 크기 축소 */
+    }
+
+    #l {
+        display: flex;
+        justify-content: center;
+    }
+
+    #r {
+        display: flex;
+        justify-content: left;
+    }
+
+    #f {
+        float: left;
+    }
+
+    #squares {
+        width: 95%;
+        transform: scale(0.6);
+        display: flex;
+        justify-content: space-around;
+        padding-top: 20px;
+    }
+
+    .squares_up {
+        display: flex;
+        justify-content: center;
+    }
+
+    .square, .occupied, .n {
+        width: 35px;  /* 더 작은 크기로 조정 */
+        height: 35px;
+        margin: 6px;  /* 여백도 줄임 */
+    }
+
+    .firstline {
+        display: flex;
+        justify-content: center;
+    }
+
+    .blank {
+        width: 50%;
+    }
+
+    .welcome-message {
+        font-family: 'Pretendard';
+        font-size: 14px; /* 글자 크기 축소 */
+    }
+
+    .centered-text {
+        font-size: 16px; /* 글자 크기 축소 */
+    }
+
+    .square {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #dcf5ff;
+        text-align: center;
+        line-height: 60px;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 12px; /* 좌석 번호 글자 크기 축소 */
+    }
+
+    .occupied {
+        background-color: #6c6d6d;
+        border-radius: 6px;
+    }
+
+    .n {
+        display: inline-block;
+        background-color: rgba(0, 0, 0, 0);
+        text-align: center;
+        line-height: 60px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .stage-text {
+        width: 90%;
+    }
+
+    .stage-text-inner {
+        height: 25px;
+        padding-top: 12px;
+        font-size: 12px;
+    }
+
+    .stage {
+        margin-bottom: 15px;
+    }
+
+    .back-button {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+        top: 5px;
+        right: 5px;
+    }
+}
