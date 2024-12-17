@@ -496,35 +496,12 @@ body{
 
 /* 작은 모바일 (400px 이하) */
 @media (max-width: 400px) {
-    body {
-        min-height: 100vh;
-        overflow-x: hidden;
-        padding: 10px;
-    }
-
     #seat_left, #seat_right {
-        transform: scale(0.45);
-        transform-origin: top center;
-        margin: 0;
-        padding: 0;
-    }
-
-    #squares {
-        width: 100%;
-        transform: scale(0.45);
-        transform-origin: top center;
-        margin-top: -50px;
-    }
-
-    .squares_up {
-        width: 100%;
-        overflow-x: hidden;
-        margin-top: -30px;
-    }
-
-    .stage {
-        transform: scale(0.8);
-        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transform: scale(0.6); /* 더 작은 화면에 맞게 크기 축소 */
     }
 
     #l {
@@ -541,10 +518,23 @@ body{
         float: left;
     }
 
+    #squares {
+        width: 95%;
+        transform: scale(0.6);
+        display: flex;
+        justify-content: space-around;
+        padding-top: 20px;
+    }
+
+    .squares_up {
+        display: flex;
+        justify-content: center;
+    }
+
     .square, .occupied, .n {
-        width: 35px;
+        width: 35px;  /* 더 작은 크기로 조정 */
         height: 35px;
-        margin: 6px;
+        margin: 6px;  /* 여백도 줄임 */
     }
 
     .firstline {
@@ -558,11 +548,11 @@ body{
 
     .welcome-message {
         font-family: 'Pretendard';
-        font-size: 14px;
+        font-size: 14px; /* 글자 크기 축소 */
     }
 
     .centered-text {
-        font-size: 16px;
+        font-size: 16px; /* 글자 크기 축소 */
     }
 
     .square {
@@ -574,7 +564,7 @@ body{
         line-height: 60px;
         cursor: pointer;
         border-radius: 6px;
-        font-size: 12px;
+        font-size: 12px; /* 좌석 번호 글자 크기 축소 */
     }
 
     .occupied {
@@ -613,94 +603,5 @@ body{
         font-size: 16px;
         top: 5px;
         right: 5px;
-    }
-}
-
-/* 중간 모바일 (300px ~ 400px) */
-@media (min-width: 301px) and (max-width: 400px) {
-    #seat_left, #seat_right {
-        transform: scale(0.5);
-        transform-origin: top center;
-    }
-
-    #squares {
-        transform: scale(0.5);
-        margin-top: -40px;
-    }
-
-    .square, .occupied, .n {
-        width: 38px;
-        height: 38px;
-        margin: 7px;
-    }
-
-    .welcome-message {
-        font-size: 15px;
-    }
-
-    .centered-text {
-        font-size: 17px;
-    }
-
-    .square {
-        line-height: 65px;
-        font-size: 13px;
-    }
-
-    .stage-text-inner {
-        height: 28px;
-        padding-top: 14px;
-        font-size: 13px;
-    }
-
-    .back-button {
-        width: 28px;
-        height: 28px;
-        font-size: 18px;
-    }
-}
-
-/* 매우 작은 모바일 (300px 이하) */
-@media (max-width: 300px) {
-    #seat_left, #seat_right {
-        transform: scale(0.4);
-        transform-origin: top center;
-    }
-
-    #squares {
-        transform: scale(0.4);
-        margin-top: -60px;
-    }
-
-    .square, .occupied, .n {
-        width: 32px;
-        height: 32px;
-        margin: 5px;
-    }
-
-    .welcome-message {
-        font-size: 13px;
-    }
-
-    .centered-text {
-        font-size: 15px;
-    }
-
-    .square {
-        line-height: 55px;
-        font-size: 11px;
-        border-radius: 5px;
-    }
-
-    .stage-text-inner {
-        height: 22px;
-        padding-top: 10px;
-        font-size: 11px;
-    }
-
-    .back-button {
-        width: 22px;
-        height: 22px;
-        font-size: 14px;
     }
 }
