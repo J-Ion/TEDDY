@@ -501,7 +501,7 @@ body{
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        transform: scale(0.6); /* 더 작은 화면에 맞게 크기 축소 */
+        transform: scale(0.6);
     }
 
     #l {
@@ -532,9 +532,9 @@ body{
     }
 
     .square, .occupied, .n {
-        width: 35px;  /* 더 작은 크기로 조정 */
+        width: 35px;
         height: 35px;
-        margin: 6px;  /* 여백도 줄임 */
+        margin: 6px;
     }
 
     .firstline {
@@ -548,11 +548,11 @@ body{
 
     .welcome-message {
         font-family: 'Pretendard';
-        font-size: 14px; /* 글자 크기 축소 */
+        font-size: 14px;
     }
 
     .centered-text {
-        font-size: 16px; /* 글자 크기 축소 */
+        font-size: 16px;
     }
 
     .square {
@@ -564,7 +564,7 @@ body{
         line-height: 60px;
         cursor: pointer;
         border-radius: 6px;
-        font-size: 12px; /* 좌석 번호 글자 크기 축소 */
+        font-size: 12px;
     }
 
     .occupied {
@@ -603,5 +603,94 @@ body{
         font-size: 16px;
         top: 5px;
         right: 5px;
+    }
+}
+
+/* 중간 모바일 (300px ~ 400px) */
+@media (min-width: 301px) and (max-width: 400px) {
+    #seat_left, #seat_right {
+        transform: scale(0.7);
+    }
+
+    #squares {
+        width: 95%;
+        transform: scale(0.7);
+        padding-top: 25px;
+    }
+
+    .square, .occupied, .n {
+        width: 38px;
+        height: 38px;
+        margin: 7px;
+    }
+
+    .welcome-message {
+        font-size: 15px;
+    }
+
+    .centered-text {
+        font-size: 17px;
+    }
+
+    .square {
+        line-height: 65px;
+        font-size: 13px;
+    }
+
+    .stage-text-inner {
+        height: 28px;
+        padding-top: 14px;
+        font-size: 13px;
+    }
+
+    .back-button {
+        width: 28px;
+        height: 28px;
+        font-size: 18px;
+    }
+}
+
+/* 매우 작은 모바일 (300px 이하) */
+@media (max-width: 300px) {
+    #seat_left, #seat_right {
+        transform: scale(0.5);
+    }
+
+    #squares {
+        width: 98%;
+        transform: scale(0.5);
+        padding-top: 15px;
+    }
+
+    .square, .occupied, .n {
+        width: 32px;
+        height: 32px;
+        margin: 5px;
+    }
+
+    .welcome-message {
+        font-size: 13px;
+    }
+
+    .centered-text {
+        font-size: 15px;
+    }
+
+    .square {
+        line-height: 55px;
+        font-size: 11px;
+        border-radius: 5px;
+    }
+
+    .stage-text-inner {
+        height: 22px;
+        padding-top: 10px;
+        font-size: 11px;
+    }
+
+    .back-button {
+        width: 22px;
+        height: 22px;
+        font-size: 14px;
     }
 }
