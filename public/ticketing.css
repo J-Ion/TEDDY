@@ -496,12 +496,35 @@ body{
 
 /* 작은 모바일 (400px 이하) */
 @media (max-width: 400px) {
+    body {
+        min-height: 100vh;
+        overflow-x: hidden;
+        padding: 10px;
+    }
+
     #seat_left, #seat_right {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        transform: scale(0.6);
+        transform: scale(0.45);
+        transform-origin: top center;
+        margin: 0;
+        padding: 0;
+    }
+
+    #squares {
+        width: 100%;
+        transform: scale(0.45);
+        transform-origin: top center;
+        margin-top: -50px;
+    }
+
+    .squares_up {
+        width: 100%;
+        overflow-x: hidden;
+        margin-top: -30px;
+    }
+
+    .stage {
+        transform: scale(0.8);
+        margin-bottom: 0;
     }
 
     #l {
@@ -516,19 +539,6 @@ body{
 
     #f {
         float: left;
-    }
-
-    #squares {
-        width: 95%;
-        transform: scale(0.6);
-        display: flex;
-        justify-content: space-around;
-        padding-top: 20px;
-    }
-
-    .squares_up {
-        display: flex;
-        justify-content: center;
     }
 
     .square, .occupied, .n {
@@ -609,13 +619,13 @@ body{
 /* 중간 모바일 (300px ~ 400px) */
 @media (min-width: 301px) and (max-width: 400px) {
     #seat_left, #seat_right {
-        transform: scale(0.7);
+        transform: scale(0.5);
+        transform-origin: top center;
     }
 
     #squares {
-        width: 95%;
-        transform: scale(0.7);
-        padding-top: 25px;
+        transform: scale(0.5);
+        margin-top: -40px;
     }
 
     .square, .occupied, .n {
@@ -653,13 +663,13 @@ body{
 /* 매우 작은 모바일 (300px 이하) */
 @media (max-width: 300px) {
     #seat_left, #seat_right {
-        transform: scale(0.5);
+        transform: scale(0.4);
+        transform-origin: top center;
     }
 
     #squares {
-        width: 98%;
-        transform: scale(0.5);
-        padding-top: 15px;
+        transform: scale(0.4);
+        margin-top: -60px;
     }
 
     .square, .occupied, .n {
