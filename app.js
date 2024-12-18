@@ -8,15 +8,13 @@ const app = express();
 
 // CORS 설정 (모든 도메인 허용, 테스트 목적)
 app.use(cors({
-    origin: '*',
+    origin: 'https://teddy-9kuu.onrender.com', // 실제 배포 주소로 수정
     credentials: true
 }));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); // URL 인코딩된 데이터 처리
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
 const users = require('./users');
 
 const selectedSquares = {};
