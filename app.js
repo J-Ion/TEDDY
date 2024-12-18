@@ -3,7 +3,9 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const app = express();
+const cors = require('cors');
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); // URL 인코딩된 데이터 처리
 app.use(cookieParser());
