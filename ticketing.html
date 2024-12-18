@@ -271,7 +271,7 @@
         });
 
         function updateSquares() {
-            fetch('/get-selected-squares')
+            fetch('http://localhost:3000/get-selected-squares')
                 .then(res => res.json())
                 .then(data => {
                     for (let squareId in data) {
