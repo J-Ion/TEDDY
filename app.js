@@ -4,8 +4,14 @@ const cookieParser = require('cookie-parser');
 const path = require('path');
 const app = express();
 const cors = require('cors');
-  
+const corsOptions = {
+  origin: 'https://your-domain.com', // 허용할 도메인 (외부 웹사이트)
+  methods: 'GET,POST', // 허용할 HTTP 메서드
+  credentials: true // 쿠키를 포함한 요청을 허용
+};
+
 app.use(cors());
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); // URL 인코딩된 데이터 처리
 app.use(cookieParser());
