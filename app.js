@@ -30,16 +30,15 @@ app.get('/ticketing.html', (req, res) => {
 // 로그인 처리
 app.post('/login', (req, res) => {
     const { userId, password } = req.body;
-    console.log(`Received userId: ${userId}, password: ${password}`);
-
     if (users[userId] && users[userId].password === password) {
         res.cookie('userId', userId);
-        res.cookie('userName', users[userId].name); // 유저 이름 가져오기
-        res.redirect('/ticketing.html'); //진짜못하겠어요ㅜㅜ
+        res.cookie('userName', users[userId].name);
+        res.redirect('/ticketing.html'); // 반드시 절대 경로 사용
     } else {
-        res.status(401).send('아이디나 비밀번호가 일치하지 않아 페이지를 열 수 없습니다.');
+        res.status(401).send('아이디나 비밀번호가 일치하지 않습니다.');
     }
 });
+
 
 // 선택된 사각형 가져오기
 app.get('/get-selected-squares', (req, res) => {
@@ -48,7 +47,7 @@ app.get('/get-selected-squares', (req, res) => {
         acc[squareId] = {
             userId: data.userId,
             isOwner: data.userId === userId,
-            name: users[data.userId].name
+            name: users[data.userId]?.name || '알 수 없음'
         };
         return acc;
     }, {});
@@ -78,6 +77,8 @@ app.post('/select-square', (req, res) => {
         res.send('좌석이 성공적으로 선택되었습니다.');
     }
 });
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/seat-info.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'seat-info.html'));
