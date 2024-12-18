@@ -1,14 +1,14 @@
 @import url('https://webfontworld.github.io/pretendard/Pretendard.css');
 
-body{
+body {
     font-family: 'Pretendard';
-    background-image: url('/images/PlaneBG.jpg');
+    background-image: url('/public/images/PlaneBG.jpg');
     background-position: center;
     background-size: cover;
 
 }
 
-.main{
+.main {
     display: flex;
     justify-content: center;
     font-size: 30px;
@@ -17,12 +17,12 @@ body{
     width: 100vh;
 }
 
-.mainLogin{
+.mainLogin {
     color: #ffffff;
     margin-top: 0;
 }
 
-.wrap{
+.wrap {
     margin: 0;
     display: flex;
     justify-content: center;
@@ -30,7 +30,7 @@ body{
     height: 100vh;
 }
 
-.wrapUnder{
+.wrapUnder {
     display: flex;
     justify-content: center;
     height: 48.7vh;
@@ -39,7 +39,7 @@ body{
     border-radius: 30px;
 }
 
-.lining{
+.lining {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,27 +48,27 @@ body{
     margin: 0;
 }
 
-.userid{
+.userid {
     border: none;
     box-shadow: 2px 2px 13px #656565;
     border-radius: 26px;
     width: 300px;
-	height: 60px;
-	font-size: 13px;
+    height: 60px;
+    font-size: 13px;
     text-align: center;
 }
 
-.userpw{
+.userpw {
     border: none;
     box-shadow: 2px 2px 13px #656565;
     border-radius: 26px;
     width: 300px;
-	height: 60px;
-	font-size: 13px;
+    height: 60px;
+    font-size: 13px;
     text-align: center;
 }
 
-input::placeholder{
+input::placeholder {
     text-align: center;
 }
 
@@ -86,7 +86,7 @@ input::placeholder{
     cursor: pointer;
     margin: 20px;
     height: 82.5px;
-    text-align:center;
+    text-align: center;
     border: none;
     background-size: 300% 100%;
 
