@@ -1,607 +1,449 @@
 @import url('https://webfontworld.github.io/pretendard/Pretendard.css');
 
-body{
+/* 공통 스타일 */
+body {
     font-family: 'Pretendard';
-    background-image: linear-gradient(318.32deg, #0d1724 0%, #3a4048 55%, #363f49 100%);
-    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
-@media (min-width: 10px) and (max-width: 770px) {
-    #seat_left, #seat_right {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        transform: scale(0.85);
-    }
-
-    #l {
-        display: flex;
-        justify-content: center;
-    }
-
-    #r {
-        display: flex;
-        justify-content: left;
-    }
-
-    #f {
-        float: left;
-    }
-
-    #squares {
-        width: 90%;
-        transform: scale(0.85);
-        display: flex;
-        justify-content: space-around;
-        padding-top: 30px;
-    }
-
-    .squares_up {
-        display: flex;
-        justify-content: center;
-    }
-
-    .square, .occupied, .n {
-        width: 40px;
-        height: 40px;
-        margin: 8px;
-    }
-
-    .firstline {
-        display: flex;
-        justify-content: center;
-    }
-
-    .blank {
-        width: 50%;
-    }
-
-    .welcome-message {
-        font-family: 'Pretendard';
-    }
-
-    .square {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #dcf5ff;
-        text-align: center;
-        line-height: 70px;
-        cursor: pointer;
-        border-radius: 8px;
-    }
-
-    .occupied {
-        background-color: #6c6d6d;
-        border-radius: 8px;
-    }
-
-    .n {
-        display: inline-block;
-        background-color: rgba(0, 0, 0, 0);
-        text-align: center;
-        line-height: 70px;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .stage-text {
-        width: 80%;
-    }
-
-    .stage-text-inner {
-        height: 30px;
-        padding-top: 15px;
-        font-size: 14px;
-    }
-
-    .disabled {
-        background-color: grey;
-        pointer-events: none;
-    }
-
-    .confirm-box {
-        display: none;
-        margin-top: 20px;
-    }
-
-    .centered-text {
-        font-family: 'Pretendard', sans-serif;
-        color: #fff;
-        text-align: center;
-        width: 100%;
-    }
-
-    .stage {
-        width: 100%;
-        height: 40px;
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .stage-text {
-        font-family: 'Pretendard', sans-serif;
-        color: #fff;
-        text-align: center;
-        width: 55%;
-        height: 40px;
-    }
-
-    .stage-text-inner {
-        font-family: 'Pretendard', sans-serif;
-        color: #000000;
-        background-color: #aadbf5;
-        text-align: center;
-        width: 100%;
-        height: 40px;
-        padding-top: 20px;
-        border-radius: 10px;
-    }
-
-    .back-button {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        width: 30px;
-        height: 30px;
-        background-color: #ff4757;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        font-size: 20px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        z-index: 1000;
-    }
-
-    .back-button:hover {
-        background-color: #ff6b81;
-    }
+a {
+    text-decoration: none;
+    color: white;
 }
 
+/* 버튼 효과 스타일 */
+.btn-hover {
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-9 {
+    background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+
+/* 데스크탑 (1024px 이상) */
 @media (min-width: 1024px) {
-    #seat_left{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+    .Welcome {
+        font-size: 250px;
+        font-weight: 600;
+        white-space: nowrap;
     }
 
-    #l{
-        display: flex;
-        justify-content: center;
-    }
-
-    #seat_right{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    #r{
-        display: flex;
-        justify-content: left;
-    }
-
-    #f{
-        float: left;
-    }
-
-    #squares{
-        display: flex;
-        justify-content: space-around;
-        width: 60%;
-        padding-top: 30px;
-    }
-
-    .squares_up{
+    .WelcomeContainer {
         display: flex;
         justify-content: center;
+        margin-top: 150px;
+        margin-bottom: 150px;
+        padding: 0 20px;
     }
 
-    .occupied{
-        width: 50px;
-        height: 50px;
-        margin: 10px;
-        background-color: #6c6d6d;
-        border-radius: 8px;
-    }
-
-    .n{
-        width: 50px;
-        height: 50px;
-        margin: 10px;
-        display: inline-block;
-        background-color: rgba(0, 0, 0, 0);
-        text-align: center;
-        line-height: 100px;
-        cursor: pointer;
+    .IntroduceContainerUp {
         display: flex;
         justify-content: center;
-        align-items: center;
+        margin-bottom: 300px;
+        padding: 0 15%;
     }
 
-    .firstline{
+    .IntroduceContainer {
         display: flex;
-        justify-content: center;
-    }
-
-    .blank{
-        width: 50%;
-    }
-
-    .welcome-message{
-        font-family: 'Pretendard';
-    }
-
-    .square{
-        width: 50px;
-        height: 50px;
-        margin: 10px;
-        display: inline-block;
-        background-color: #dcf5ff;
-        text-align: center;
-        line-height: 100px;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 8px;
-    }
-
-    .disabled {
-        background-color: grey;
-        pointer-events: none;
-    }
-
-    .confirm-box {
-        display: none;
-        margin-top: 20px;
-    }
-
-    .centered-text {
-        font-family: 'Pretendard', sans-serif;
-        color: #fff;
-        text-align: center;
+        justify-content: space-between;
         width: 100%;
+        gap: 50px;
     }
 
-    .stage {
-        width: 100%;
-        height: 40px;
-        color: #fff;
+    .IntroducePicUp {
+        margin-top: 4%;
+    }
+
+    .IntroducePic {
+        width: 720px;
+        height: 300px;
+    }
+
+    .InviteContainer {
+        flex: 1;
+    }
+
+    .Invite {
+        font-size: 80px;
+        font-weight: 600;
+    }
+
+    .Ready {
+        font-size: 150px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .ReadyPic {
+        width: 500px;
+        height: 800px;
+        border-radius: 40px;
+    }
+
+    .ReadyContainer {
+        margin: 0;
+    }
+
+    .Ultimate {
         display: flex;
         justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
+        padding: 0 15%;
     }
 
-    .stage-text{
-        font-family: 'Pretendard', sans-serif;
-        color: #fff;
-        text-align: center;
-        width: 55%;
-        height: 40px;
-    }
-
-    .stage-text-inner{
-        font-family: 'Pretendard', sans-serif;
-        color: #000000;
-        background-color: #aadbf5;
-        text-align: center;
+    .ReadyContainerUp {
+        display: flex;
+        justify-content: space-between;
         width: 100%;
-        height: 40px;
-        padding-top: 20px;
-        border-radius: 10px;
+        gap: 50px;
     }
 
-    .back-button {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        width: 30px;
-        height: 30px;
-        background-color: #ff4757;
-        color: white;
-        border: none;
-        border-radius: 50%;
+    .buttons {
+        margin: 10%;
+        text-align: center;
+    }
+
+    .btn-hover {
+        width: 300px;
+        height: 82.5px;
         font-size: 20px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        z-index: 1000;
+        margin: 20px;
+        text-align: center;
     }
 
-    .back-button:hover {
-        background-color: #ff6b81;
+    .btn-hover.color-9 {
+        margin-top: 50px;
+        margin-left: 0;
     }
 }
 
-@media (min-width: 770px) and (max-width: 1024px) {
-    #seat_left, #seat_right {
+/* 태블릿 (770px - 1023px) */
+@media (min-width: 770px) and (max-width: 1023px) {
+    .Welcome {
+        font-size: 150px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .WelcomeContainer {
         display: flex;
+        justify-content: center;
+        margin-top: 200px;
+        margin-bottom: 200px;
+        padding: 0 20px;
+    }
+
+    .IntroduceContainerUp {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 200px;
+        padding: 0 10%;
+        height: 300px;
+    }
+
+    .IntroduceContainer {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 40px;
         align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        transform: scale(0.9);
     }
 
-    #l {
-        display: flex;
-        justify-content: center;
-    }
-
-    #r {
-        display: flex;
-        justify-content: left;
-    }
-
-    #f {
-        float: left;
-    }
-
-    #squares {
-        width: 80%;
-        display: flex;
-        justify-content: space-around;
-        padding-top: 30px;
-        transform: scale(0.9);
-    }
-
-    .squares_up {
-        display: flex;
-        justify-content: center;
-    }
-
-    .square, .occupied, .n {
-        width: 45px;
-        height: 45px;
-        margin: 9px;
-    }
-
-    .firstline {
-        display: flex;
-        justify-content: center;
-    }
-
-    .blank {
-        width: 50%;
-    }
-
-    .welcome-message {
-        font-family: 'Pretendard';
-    }
-
-    .square {
+    .IntroducePicUp {
+        flex: 1;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #dcf5ff;
+    }
+
+    .IntroducePic {
+        width: 500px;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .InviteContainer {
+        flex: 1;
+    }
+
+    .Invite {
+        font-size: 60px;
+        font-weight: 600;
+    }
+
+    .Ready {
+        font-size: 80px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .ReadyPic {
+        width: 375px;
+        height: 600px;
+        border-radius: 40px;
+    }
+
+    .ReadyContainer {
+        margin: 0;
+    }
+
+    .Ultimate {
+        display: flex;
+        justify-content: center;
+        padding: 0 10%;
+    }
+
+    .ReadyContainerUp {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 40px;
+    }
+
+    .buttons {
+        margin: 10%;
         text-align: center;
-        line-height: 85px;
-        cursor: pointer;
-        border-radius: 8px;
     }
 
-    .occupied {
-        background-color: #6c6d6d;
-        border-radius: 8px;
-    }
-
-    .n {
-        display: inline-block;
-        background-color: rgba(0, 0, 0, 0);
-        text-align: center;
-        line-height: 85px;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .stage-text {
-        width: 70%;
-    }
-
-    .stage-text-inner {
-        height: 35px;
-        padding-top: 17px;
+    .btn-hover {
+        width: 300px;
+        height: 82.5px;
         font-size: 16px;
-    }
-
-    .disabled {
-        background-color: grey;
-        pointer-events: none;
-    }
-
-    .confirm-box {
-        display: none;
-        margin-top: 20px;
-    }
-
-    .centered-text {
-        font-family: 'Pretendard', sans-serif;
-        color: #fff;
+        margin: 20px;
         text-align: center;
-        width: 100%;
     }
 
-    .stage {
-        width: 100%;
-        height: 40px;
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .stage-text {
-        font-family: 'Pretendard', sans-serif;
-        color: #fff;
-        text-align: center;
-        width: 60%;
-        height: 40px;
-    }
-
-    .stage-text-inner {
-        font-family: 'Pretendard', sans-serif;
-        color: #000000;
-        background-color: #aadbf5;
-        text-align: center;
-        width: 100%;
-        height: 40px;
-        padding-top: 20px;
-        border-radius: 10px;
-    }
-
-    .back-button {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        width: 30px;
-        height: 30px;
-        background-color: #ff4757;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        font-size: 20px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        z-index: 1000;
-    }
-
-    .back-button:hover {
-        background-color: #ff6b81;
+    .btn-hover.color-9 {
+        margin-top: 50px;
+        margin-left: 0;
     }
 }
-
 /* 작은 모바일 (400px 이하) */
 @media (max-width: 400px) {
-    #seat_left, #seat_right {
+    .Welcome {
+        font-size: 50px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .WelcomeContainer {
         display: flex;
-        align-items: center;
         justify-content: center;
+        margin-top: 150px;
+        margin-bottom: 150px;
+        padding: 0 10px;
+    }
+
+    .IntroduceContainerUp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        margin-bottom: 150px;
+        padding: 0 5%;
+    }
+
+    .IntroduceContainer {
+        display: flex;
         flex-direction: column;
-        transform: scale(0.6); /* 더 작은 화면에 맞게 크기 축소 */
+        align-items: center;
+        width: 100%;
+        gap: 20px;
     }
 
-    #l {
+    .IntroducePicUp {
+        width: 100%;
         display: flex;
         justify-content: center;
     }
 
-    #r {
+    .IntroducePic {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .InviteContainer {
+        width: 100%;
+        text-align: center;
+    }
+
+    .Invite {
+        font-size: 1.2rem;
+        margin: 10px 0;
+    }
+
+    .Ready {
+        font-size: 25px;
+        font-weight: 600;
+        margin: 0;
+        text-align: center;
+    }
+
+    .ReadyPic {
+        width: 150px;
+        height: 240px;
+        border-radius: 20px;
+    }
+
+    .ReadyContainer {
+        margin: 0;
+        text-align: center;
+    }
+
+    .ReadyContainerUp {
         display: flex;
-        justify-content: left;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
     }
 
-    #f {
-        float: left;
-    }
-
-    #squares {
-        width: 95%;
-        transform: scale(0.6);
-        display: flex;
-        justify-content: space-around;
-        padding-top: 20px;
-    }
-
-    .squares_up {
+    .Ultimate {
         display: flex;
         justify-content: center;
+        padding: 0 5%;
     }
 
-    .square, .occupied, .n {
-        width: 35px;  /* 더 작은 크기로 조정 */
-        height: 35px;
-        margin: 6px;  /* 여백도 줄임 */
+    .buttons {
+        margin: 5%;
+        text-align: center;
     }
 
-    .firstline {
+    .btn-hover {
+        width: 180px;
+        height: 45px;
+        font-size: 14px;
+        margin: 15px;
+    }
+
+    .btn-hover.color-9 {
+        margin-left: 0;
+    }
+}
+
+/* 중간 모바일 (401px - 769px) */
+@media (min-width: 401px) and (max-width: 769px) {
+    .Welcome {
+        font-size: 80px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .WelcomeContainer {
         display: flex;
         justify-content: center;
+        margin-top: 200px;
+        margin-bottom: 200px;
+        padding: 0 15px;
     }
 
-    .blank {
-        width: 50%;
-    }
-
-    .welcome-message {
-        font-family: 'Pretendard';
-        font-size: 14px; /* 글자 크기 축소 */
-    }
-
-    .centered-text {
-        font-size: 16px; /* 글자 크기 축소 */
-    }
-
-    .square {
+    .IntroduceContainerUp {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #dcf5ff;
-        text-align: center;
-        line-height: 60px;
-        cursor: pointer;
-        border-radius: 6px;
-        font-size: 12px; /* 좌석 번호 글자 크기 축소 */
+        height: auto;
+        margin-bottom: 200px;
+        padding: 0 5%;
     }
 
-    .occupied {
-        background-color: #6c6d6d;
-        border-radius: 6px;
-    }
-
-    .n {
-        display: inline-block;
-        background-color: rgba(0, 0, 0, 0);
-        text-align: center;
-        line-height: 60px;
-        cursor: pointer;
+    .IntroduceContainer {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-    }
-
-    .stage-text {
         width: 90%;
+        gap: 30px;
     }
 
-    .stage-text-inner {
-        height: 25px;
-        padding-top: 12px;
-        font-size: 12px;
+    .IntroducePicUp {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
-    .stage {
-        margin-bottom: 15px;
+    .IntroducePic {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
     }
 
-    .back-button {
-        width: 25px;
-        height: 25px;
+    .InviteContainer {
+        width: 100%;
+        text-align: center;
+    }
+
+    .Invite {
+        font-size: 1.8rem;
+    }
+
+    .Ready {
+        font-size: 40px;
+        font-weight: 600;
+        margin: 0;
+        text-align: center;
+    }
+
+    .ReadyPic {
+        width: 188px;
+        height: 300px;
+        border-radius: 30px;
+    }
+
+    .ReadyContainer {
+        margin: 0;
+        text-align: center;
+    }
+
+    .ReadyContainerUp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        gap: 30px;
+    }
+
+    .Ultimate {
+        display: flex;
+        justify-content: center;
+        padding: 0 5%;
+    }
+
+    .buttons {
+        margin: 8%;
+        text-align: center;
+    }
+
+    .btn-hover {
+        width: 200px;
+        height: 55px;
         font-size: 16px;
-        top: 5px;
-        right: 5px;
+        margin: 20px;
+    }
+
+    .btn-hover.color-9 {
+        margin-left: 0;
     }
 }
