@@ -43,7 +43,7 @@ app.post('/login', (req, res) => {
 
 
 // 선택된 사각형 가져오기
-app.get('/get-selected-squares', (req, res) => {
+app.get('https://teddy-9kuu.onrender.com/get-selected-squares', (req, res) => {
     const userId = req.cookies.userId; // 요청에서 쿠키를 가져옵니다.
     const squaresWithOwnership = Object.entries(selectedSquares).reduce((acc, [squareId, data]) => {
         acc[squareId] = {
