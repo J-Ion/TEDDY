@@ -59,21 +59,23 @@ app.get('/ticket/:id', (req, res) => {
 
 // 사각형 선택 처리
 app.post('/select-square', (req, res) => {
-    const userId = req.cookies.userId;
-    const { squareId } = req.body;
+    const userId = req.cookies.userId; // 사용자 ID 가져오기
+    const { squareId } = req.body;    // 요청 데이터에서 squareId 추출
 
     // 이미 선택된 좌석이 있는지 확인
-    const existingSquare = Object.entries(selectedSquares).find(([key, value]) => value.userId === userId);
+    const existingSquare = Object.entries(selectedSquares).find(
+        ([key, value]) => value.userId === userId
+    );
     if (existingSquare) {
-        return res.status(400).send('이미 선택된 좌석이 있습니다.'); // 이미 선택된 좌석이 있을 경우
+        return res.status(400).send('이미 선택된 좌석이 있습니다.');
     }
 
     if (selectedSquares[squareId]) {
-        res.status(400).send('이미 선택된 사각형입니다.');
-    } else {
-        selectedSquares[squareId] = { userId: userId };
-        res.send('좌석이 성공적으로 선택되었습니다.');
+        return res.status(400).send('이미 선택된 사각형입니다.');
     }
+
+    selectedSquares[squareId] = { userId: userId };
+    res.send('좌석이 성공적으로 선택되었습니다.');
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
