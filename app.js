@@ -2,19 +2,16 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
-const app = express();
 const cors = require('cors');
-const corsOptions = {
-  origin: 'https://your-domain.com', // 허용할 도메인 (외부 웹사이트)
-  methods: 'GET,POST', // 허용할 HTTP 메서드
-  credentials: true // 쿠키를 포함한 요청을 허용
-};
 
+const app = express();
+
+// CORS 설정 (모든 도메인 허용, 테스트 목적)
 app.use(cors({
-    origin: '*', // 모든 도메인 허용 (테스트 목적)
+    origin: '*',
     credentials: true
-  }));
-app.use(cors(corsOptions));
+}));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); // URL 인코딩된 데이터 처리
 app.use(cookieParser());
@@ -44,12 +41,11 @@ app.post('/login', (req, res) => {
     if (users[userId] && users[userId].password === password) {
         res.cookie('userId', userId);
         res.cookie('userName', users[userId].name);
-        res.redirect('/ticketing.html'); // 반드시 절대 경로 사용
+        res.redirect('/ticketing.html');
     } else {
         res.status(401).send('아이디나 비밀번호가 일치하지 않습니다.');
     }
 });
-
 
 // 선택된 사각형 가져오기
 app.get('/get-selected-squares', (req, res) => {
@@ -62,7 +58,7 @@ app.get('/get-selected-squares', (req, res) => {
         };
         return acc;
     }, {});
-    res.json(squaresWithOwnership); // JSON 형태로 응답
+    res.json(squaresWithOwnership);
 });
 
 // 사각형 선택 페이지
@@ -72,10 +68,9 @@ app.get('/ticket/:id', (req, res) => {
 
 // 사각형 선택 처리
 app.post('/select-square', (req, res) => {
-    const userId = req.cookies.userId; // 사용자 ID 가져오기
-    const { squareId } = req.body;    // 요청 데이터에서 squareId 추출
+    const userId = req.cookies.userId;
+    const { squareId } = req.body;
 
-    // 이미 선택된 좌석이 있는지 확인
     const existingSquare = Object.entries(selectedSquares).find(
         ([key, value]) => value.userId === userId
     );
@@ -91,13 +86,13 @@ app.post('/select-square', (req, res) => {
     res.send('좌석이 성공적으로 선택되었습니다.');
 });
 
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/seat-info.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'seat-info.html'));
 });
 
+// 서버 실행
 app.listen(3000, '0.0.0.0', () => {
     console.log('Server is running on port 3000');
 });
