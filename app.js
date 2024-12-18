@@ -41,16 +41,18 @@ app.post('/login', (req, res) => {
 
 
 // 선택된 사각형 가져오기
-const userId = req.cookies.userId;
-const squaresWithOwnership = Object.entries(selectedSquares).reduce((acc, [squareId, data]) => {
-    acc[squareId] = {
-        userId: data.userId,
-        isOwner: data.userId === userId,
-        name: users[data.userId].name
-    };
-    return acc;
-}, {});
-res.json(squaresWithOwnership);
+app.get('/get-selected-squares', (req, res) => {
+    const userId = req.cookies.userId; // 요청에서 쿠키를 가져옵니다.
+    const squaresWithOwnership = Object.entries(selectedSquares).reduce((acc, [squareId, data]) => {
+        acc[squareId] = {
+            userId: data.userId,
+            isOwner: data.userId === userId,
+            name: users[data.userId].name
+        };
+        return acc;
+    }, {});
+    res.json(squaresWithOwnership); // JSON 형태로 응답
+});
 
 // 사각형 선택 페이지
 app.get('/ticket/:id', (req, res) => {
@@ -77,6 +79,7 @@ app.post('/select-square', (req, res) => {
     selectedSquares[squareId] = { userId: userId };
     res.send('좌석이 성공적으로 선택되었습니다.');
 });
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 
