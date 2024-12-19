@@ -22,9 +22,9 @@ app.use(
     helmet({
         contentSecurityPolicy: {
             directives: {
-                defaultSrc: ["'self'", "*"],
+                defaultSrc: ["'self'"],
                 scriptSrc: ["'self'", 'https://unpkg.com'], // 외부 스크립트 허용
-                styleSrc: ["'self'", "'unsafe-inline'", 'https://unpkg.com'], // 외부 스타일 허용
+                styleSrc: ["'self'", "'unsafe-inline'", 'https://unpkg.com', "*"], // 외부 스타일 허용
             },
         },
     })
