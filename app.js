@@ -19,13 +19,6 @@ app.use(
 
 const crypto = require('crypto');
 
-app.get("/", (req, res) => {
-    res
-        .set("Content-Security-Policy", "default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'")
-        .send("<html><head></head><body></body></html>");
-})
-
-
 // 보안 헤더 추가
 app.use(
     helmet({
@@ -63,6 +56,13 @@ app.use(express.static(__dirname));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
+
+
+app.get("/", (req, res) => {
+    res
+        .set("Content-Security-Policy", "default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'")
+        .send("<html><head></head><body></body></html>");
+})
 
 // 로그인 페이지
 app.get('/login.html', (req, res) => {
