@@ -18,7 +18,17 @@ app.use(
 );
 
 // 보안 헤더 추가
-app.use(helmet());
+app.use(
+    helmet({
+        contentSecurityPolicy: {
+            directives: {
+                defaultSrc: ["'self'"],
+                scriptSrc: ["'self'", 'https://unpkg.com'], // 외부 스크립트 허용
+                styleSrc: ["'self'", "'unsafe-inline'", 'https://unpkg.com'], // 외부 스타일 허용
+            },
+        },
+    })
+);
 
 // 속도 제한 설정 (IP당 1분에 100개의 요청 허용)
 const limiter = rateLimit({
