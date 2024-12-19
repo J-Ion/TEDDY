@@ -17,8 +17,13 @@ app.use(
   })
 );
 
+const crypto = require('crypto');
+
 app.use((req, res, next) => {
-    res.setHeader("Content-Security-Policy", "script-src 'self' 'unsafe-inline' https://unpkg.com;");
+    const nonce = crypto.randomBytes(16).toString('base64'); // 랜덤 nonce 생성
+    res.locals.nonce = nonce;  // 렌더링할 때 사용
+
+    res.setHeader("Content-Security-Policy", `script-src 'self' 'nonce-${nonce}' https://unpkg.com;`);
     next();
 });
 
