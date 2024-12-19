@@ -17,6 +17,11 @@ app.use(
   })
 );
 
+app.use((req, res, next) => {
+    res.setHeader("Content-Security-Policy", "script-src 'self' 'unsafe-inline' https://unpkg.com;");
+    next();
+});
+
 // 보안 헤더 추가
 app.use(
     helmet({
